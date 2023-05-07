@@ -1,0 +1,57 @@
+<div class="container has-background-link-light">
+    <div class="tile-is-ancestor">
+        <h3 class="card-header-title is-centered">
+            Latest Weather
+        </h3>
+        <section>
+            #{list items:_station, as:'station'}
+            <div class="columns is-variable is-1-mobile is-1-tablet is-2-desktop is-4-widescreen is-3-fullhd">
+                <div class="column">
+                    <div class="box has-background-link-dark has-text-centered">
+                        <h3 class="has-text-grey-lighter">${station.name}</h3>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="box has-background-link-dark has-text-centered">
+                        <h3 class="has-text-grey-lighter">Current Conditions:</h3>
+                        <hr>
+                        <div class="has-text-white">
+                            <p>${station.getLatestCodeReadingText()}</p> <br>
+                            <p>Weather Code: ${station.getLatestReading().getCode()} </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="box has-background-link-dark has-text-white has-text-centered">
+                        <h3 class="has-text-grey-lighter">Temperature</h3>
+                        <hr>
+                        <div class="has-text-white">${station.getLatestReading().getTemperature()} &deg;C / ${station.getLatestReading().getFahrenheit()} &deg;F</div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="box has-background-link-dark has-text-white has-text-centered">
+                        <h3 class="has-text-grey-lighter">Wind</h3>
+                        <hr>
+                        <div class="has-text-white has-text-left">
+                            <p>Wind Speed: <br> ${station.getLatestReading().getWindSpeed()} (km/h) / ${station.getLatestReading().getBeaufort()} (bft)</p>
+
+                            <p>Wind Direction: <br> ${station.getLatestReading().getWindDirection()}</p>
+
+                            <p>Feels Like: ${station.getLatestReading().getWindChill()} &deg;C</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="box has-background-link-dark has-text-white has-text-centered">
+                        <h3 class="has-text-grey-lighter">Pressure</h3>
+                        <hr>
+                        <p class="has-text-white">
+                            ${station.getLatestReading().getPressure()} (hPa)
+                        </p>
+                    </div>
+                </div>
+            </div>
+            #{/list}
+        </section>
+    </div>
+</div>

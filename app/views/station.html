@@ -1,0 +1,30 @@
+#{extends 'main.html' /}
+#{set title:'Station' /}
+
+#{menu id:"dashboard"/}
+
+<div class="content box has-background-link-light">
+  <h1 class="title">
+    ${station.name}
+  </h1>
+  #{if station.readings.size() > 0}
+  #{latestreadings station:station /}
+  <div class="box is-info has-background-success-light">
+    <div>
+      <h3 class="has-text-centered">All Weather Reports:</h3>
+
+      <p>#{listreadings station:station /}</p>
+
+    </div>
+  </div>
+  #{/if}
+  #{else}
+  <div>
+  <span class="box is-large is-size-5 has-text-weight-bold has-text-success-dark has-text-centered m-0">No readings have been recorded for ${station.name} <br> Please submit your first reading below</span>
+  </div>
+  #{/else}
+  <div class="box is-info">
+  #{addreading station:station /}
+  </div>
+</div>
+

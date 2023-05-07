@@ -1,0 +1,35 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th>Weather Conditions</th>
+    <th>Temperature</th>
+    <th>Wind Speed</th>
+    <th>Pressure (hPa)</th>
+  </tr>
+  </thead>
+  <tbody>
+  #{list items:_station.readings, as:'reading'}
+  <tr>
+    <td>
+      <strong>${reading.getCodeReadingToText()}</strong>  <hr>
+      <p>Weather Code: ${reading.code}</p>
+    </td>
+    <td>
+      ${reading.temperature} &deg;C / ${reading.getFahrenheit()} &deg;F
+    </td>
+    <td>
+
+      ${reading.windSpeed} (km/h) / ${reading.getBeaufort()} (bft)
+     <br>
+      ${reading.getWindDirection()}
+      <br>
+      Feels Like: ${reading.getWindChill()} &deg;C
+
+    </td>
+    <td>
+      ${reading.pressure}
+    </td>
+  </tr>
+  #{/list}
+  </tbody>
+</table>
