@@ -3,15 +3,22 @@
 
 #{menu id:"dashboard"/}
 
-#{list items:stations, as:'station'}
 <div class="content box has-background-info-light">
+#{if stations.size() > 0}
+#{list items:stations, as:'station'}
+
   <h1 class="title">
     ${station.name}
   </h1>
+
       <a href="/stations/${station.id}" class="icon has-text-primary is-large">
         <i class="fas fa-folder"></i>
       </a>
-</div>
-#{/list}
 
+#{/list}
+#{/if}
+#{else}
+<p>You have no Weather Stations, please enter your weather station details below</p>
+#{/else}
+</div>
 #{addstation /}

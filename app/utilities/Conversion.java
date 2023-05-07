@@ -1,8 +1,6 @@
 package utilities;
 
 import java.lang.Math;
-import java.text.DecimalFormat;
-
 
 public class Conversion {
 
@@ -112,8 +110,9 @@ public class Conversion {
         }
     }
 
-    public static double calculateWindChill(float temperature, float windSpeed){
+    public static double calculateWindChill(float temperature, float windSpeed) {
         return (13.12 + temperature*0.6215 - 11.37*Math.pow(windSpeed, 0.16) + 0.3965*temperature*Math.pow(windSpeed, 0.16));
     }
+
 }
 

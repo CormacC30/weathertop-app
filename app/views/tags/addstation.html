@@ -1,8 +1,20 @@
 <form action="/dashboard/addstation" method="POST">
-  <div class="field">
-    <label class="label">Add Weather Station</label>
+  <label class="label">Add Weather Station</label>
+  <div class="columns">
+    <div class="field column">
     <div class="control">
-      <input class="input" placeholder="Station Name" type="text" name="name">
+      <input class="input" placeholder="Station Name" type="text" step="any" name="name">
+    </div>
+    </div>
+    <div class="field column">
+      <div class="control">
+      <input class="input" placeholder="Latitude &deg;" type="number" step="any" name="latitude">
+      </div>
+      </div>
+    <div class="field column">
+      <div class="control">
+      <input class="input" placeholder="Longitude &deg;" type="number" step="any" name="longitude">
+      </div>
     </div>
   </div>
   <div class="field mt-4">
