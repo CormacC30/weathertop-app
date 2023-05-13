@@ -74,7 +74,6 @@ public class Station extends Model
                 if(reading.getTemperature() > maxReading.getTemperature()){
                     maxReading = reading;
                 }
-
             }
             return maxReading.getTemperature();
         } return 0;
@@ -88,9 +87,60 @@ public class Station extends Model
                 if(reading.getTemperature() < minReading.getTemperature()){
                     minReading = reading;
                 }
-
             }
             return minReading.getTemperature();
+        } return 0;
+    }
+
+    public float getMaxWindSpeed(){
+        if(readings.size() != 0)
+        {
+            Reading maxReading = readings.get(0);
+            for(Reading reading : readings){
+                if(reading.getWindSpeed() > maxReading.getWindSpeed()){
+                    maxReading = reading;
+                }
+            }
+            return maxReading.getWindSpeed();
+        } return 0;
+    }
+
+    public float getMinWindSpeed(){
+        if(readings.size() != 0)
+        {
+            Reading minReading = readings.get(0);
+            for(Reading reading : readings){
+                if(reading.getWindSpeed() < minReading.getWindSpeed()){
+                    minReading = reading;
+                }
+            }
+            return minReading.getWindSpeed();
+        } return 0;
+    }
+
+    public int getMaxPressure(){
+        if(readings.size() != 0)
+        {
+            Reading maxReading = readings.get(0);
+            for(Reading reading : readings){
+                if(reading.getPressure() > maxReading.getPressure()){
+                    maxReading = reading;
+                }
+            }
+            return maxReading.getPressure();
+        } return 0;
+    }
+
+    public int getMinPressure(){
+        if(readings.size() != 0)
+        {
+            Reading minReading = readings.get(0);
+            for(Reading reading : readings){
+                if(reading.getPressure() < minReading.getPressure()){
+                    minReading = reading;
+                }
+            }
+            return minReading.getPressure();
         } return 0;
     }
 
