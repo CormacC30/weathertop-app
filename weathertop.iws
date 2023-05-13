@@ -5,16 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c62244e8-cf1d-4e50-8ab4-8125425aac46" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Template_1002$_run_closure1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Template_1002$_run_closure1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Template_1003$_run_closure1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Template_1003$_run_closure1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Template_1004$_run_closure1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Template_1004$_run_closure1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Template_1004.class" beforeDir="false" afterPath="$PROJECT_DIR$/Template_1004.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Template_1005$_run_closure1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Template_1005$_run_closure1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Template_1006$_run_closure1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Template_1006$_run_closure1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Template_1006.class" beforeDir="false" afterPath="$PROJECT_DIR$/Template_1006.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Template_1008$_run_closure1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Template_1008$_run_closure1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Template_1008.class" beforeDir="false" afterPath="$PROJECT_DIR$/Template_1008.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Template_1012$_run_closure1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Template_1012$_run_closure1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Template_1012.class" beforeDir="false" afterPath="$PROJECT_DIR$/Template_1012.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/Reading.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Reading.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/utilities/Conversion.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/utilities/Conversion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/signup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/station.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/station.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/tags/latestreadings.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/tags/latestreadings.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/bytecode/DEV/_app_views_main.html" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/bytecode/DEV/_app_views_main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/tags/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/tags/menu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/tags/welcomemenu.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/tags/welcomemenu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/110-ws-25_1307_detail.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/weatherstation.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/assignment-2.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/assignment-2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/bytecode/DEV/_app_views_dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/bytecode/DEV/_app_views_dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/bytecode/DEV/_app_views_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/bytecode/DEV/_app_views_login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/bytecode/DEV/_app_views_signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/bytecode/DEV/_app_views_signup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/bytecode/DEV/_app_views_station.html" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/bytecode/DEV/_app_views_station.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tmp/bytecode/DEV/_app_views_tags_latestreadings.html" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/bytecode/DEV/_app_views_tags_latestreadings.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/bytecode/DEV/_app_views_tags_menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/bytecode/DEV/_app_views_tags_menu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/bytecode/DEV/_app_views_tags_welcomemenu.html" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/bytecode/DEV/_app_views_tags_welcomemenu.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tmp/bytecode/DEV/models.Reading" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/bytecode/DEV/models.Reading" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tmp/bytecode/DEV/utilities.Conversion" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/bytecode/DEV/utilities.Conversion" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/classes/models/Reading.class" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/classes/models/Reading.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tmp/classes/utilities/Conversion.class" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/classes/utilities/Conversion.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weathertop.iws" beforeDir="false" afterPath="$PROJECT_DIR$/weathertop.iws" afterDir="false" />
     </list>
@@ -63,6 +84,11 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\dev\web-development\assignment-2\weathertop-v3.1\public\images" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -93,7 +119,7 @@
       <workItem from="1683365584667" duration="3251000" />
       <workItem from="1683370434687" duration="4240000" />
       <workItem from="1683378112263" duration="27090000" />
-      <workItem from="1683912315984" duration="24384000" />
+      <workItem from="1683912315984" duration="29478000" />
     </task>
     <servers />
   </component>

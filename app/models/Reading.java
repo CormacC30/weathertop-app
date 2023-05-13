@@ -36,8 +36,12 @@ public class Reading extends Model
         return utilities.Conversion.codeReadingToText(this.code);
     }
 
-    public float getBeaufort() {
+    public int getBeaufort() {
         return utilities.Conversion.kmhToBeaufort(this.windSpeed);
+    }
+
+    public String getWindDescription(){
+        return utilities.Conversion.beaufortToText(this.getBeaufort());
     }
 
     public float getFahrenheit() {

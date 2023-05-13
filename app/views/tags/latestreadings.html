@@ -41,11 +41,12 @@
                         <span class="icon has-text-light is-large fa-2x"><i class="fa-solid fa-wind"></i></span>
                         <hr>
                         <div class="has-text-white has-text-left">
-                            <p>Wind Speed: <br> ${station.getLatestReading().getWindSpeed()} (km/h) / ${station.getLatestReading().getBeaufort()} (bft)</p>
+                            <p class="has-text-weight-bold">${station.getLatestReading().getWindDescription()}</p>
+                            <p><span class="has-text-weight-bold">Speed:</span> ${station.getLatestReading().getWindSpeed()} (km/h) / ${station.getLatestReading().getBeaufort()} (bft)</p>
 
-                            <p>Wind Direction: <br> ${station.getLatestReading().getWindDirection()}</p>
+                            <p><span class="has-text-weight-bold">Direction:<br></span> ${station.getLatestReading().getWindDirection()}</p>
 
-                            <p>Feels Like: ${station.getLatestReading().getWindChill()} &deg;C</p>
+                            <p><span class="has-text-weight-bold">Feels Like:</span> ${station.getLatestReading().getWindChill()} &deg;C</p>
                         </div>
                     </div>
                 </div>

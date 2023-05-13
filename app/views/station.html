@@ -4,7 +4,7 @@
 #{menu id:"dashboard"/}
 
 <div class="content box has-background-link-light">
-  <h1 class="title">
+  <h1 class="title is-size-2">
     ${station.name}
   </h1>
   <h4>
@@ -15,7 +15,7 @@
   </h4>
   #{if station.readings.size() > 0}
   #{latestreadings station:station /}
-  <div class="box is-info has-background-success-light">
+  <div class="box is-info has-background-primary-light">
     <div>
       <h3 class="has-text-centered">All Weather Reports:</h3>
 

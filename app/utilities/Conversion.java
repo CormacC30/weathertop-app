@@ -74,6 +74,37 @@ public class Conversion {
         return 0;
     }
 
+    public static String beaufortToText(int beaufort){
+        switch (beaufort) {
+            case 0:
+                return "calm";
+            case 1:
+                return "Light air";
+            case 2:
+                return "Light breeze";
+            case 3:
+                return "Gentle breeze";
+            case 4:
+                return "Moderate breeze";
+            case 5:
+                return "Fresh breeze";
+            case 6:
+                return "Strong breeze";
+            case 7:
+                return "Near gale";
+            case 8:
+                return "Gale";
+            case 9:
+                return "Strong gale";
+            case 10:
+                return "Storm";
+            case 11:
+                return "Violent Storm";
+            default:
+                return "Calm";
+        }
+    }
+
     public static String codeReadingToText(int code) {
         switch (code) {
             case 100:
