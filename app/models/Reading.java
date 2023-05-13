@@ -62,6 +62,12 @@ public class Reading extends Model
 
     public String getWindDirection() {return utilities.Conversion.windDirectionToText(this.windDirection); }
 
+    /**
+     * The getWindCompass() getter is used for passing the value of the wind direction to the html view, in order to rotate the fontawesome icon
+     * @return
+     */
+
+
 
     /**
      * getWindChill() method utilises the imported DecimalFormat class
@@ -76,6 +82,10 @@ public class Reading extends Model
 
     public String getWeatherIcon(){
         return utilities.Conversion.getWeatherIcon(this.code);
+    }
+
+    public String getTemperatureIcon(){
+        return utilities.Conversion.celciusToIcon(this.temperature);
     }
 
 }

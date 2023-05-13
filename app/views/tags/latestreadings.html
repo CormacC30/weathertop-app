@@ -30,6 +30,7 @@
                 <div class="column">
                     <div class="box has-background-link-dark has-text-white has-text-centered">
                         <h3 class="has-text-grey-lighter">Temperature</h3>
+                        <span class="icon has-text-light is-large fa-2x"><i class="${station.getLatestReading().getTemperatureIcon()}"></i></span>
                         <hr>
                         <div class="has-text-white">${station.getLatestReading().getTemperature()} &deg;C / ${station.getLatestReading().getFahrenheit()} &deg;F</div>
                     </div>
@@ -37,6 +38,7 @@
                 <div class="column">
                     <div class="box has-background-link-dark has-text-white has-text-centered">
                         <h3 class="has-text-grey-lighter">Wind</h3>
+                        <span class="icon has-text-light is-large fa-2x"><i class="fa-solid fa-wind"></i></span>
                         <hr>
                         <div class="has-text-white has-text-left">
                             <p>Wind Speed: <br> ${station.getLatestReading().getWindSpeed()} (km/h) / ${station.getLatestReading().getBeaufort()} (bft)</p>
@@ -50,6 +52,7 @@
                 <div class="column">
                     <div class="box has-background-link-dark has-text-white has-text-centered">
                         <h3 class="has-text-grey-lighter">Pressure</h3>
+                        <span class="icon has-text-light is-large fa-2x"><i class="fa-solid fa-gauge"></i></span>
                         <hr>
                         <p class="has-text-white">
                             ${station.getLatestReading().getPressure()} (hPa)

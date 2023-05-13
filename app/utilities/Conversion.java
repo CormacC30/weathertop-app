@@ -12,6 +12,7 @@ public class Conversion {
 
     /**
      * initialize the HashMap in a static block.
+     * Tried using a constructor for this purpose, (as in Programming labs) but I would get a PersistenceException message, so I came upon static blocks
      */
     static  {
         weatherIcons.put(100, "fa-solid fa-sun");
@@ -138,7 +139,30 @@ public class Conversion {
         return (13.12 + temperature*0.6215 - 11.37*Math.pow(windSpeed, 0.16) + 0.3965*temperature*Math.pow(windSpeed, 0.16));
     }
 
-
+    public static String celciusToIcon(float temperature) {
+        if(temperature <= 5){
+            return "fa-solid fa-temperature-empty";
+        }
+        if(temperature > 5 && temperature <= 10){
+            return "fa-solid fa-temperature-low";
+        }
+        if(temperature > 10 && temperature <= 15){
+            return "fa-solid fa-temperature-quarter";
+        }
+        if(temperature > 15 && temperature <= 20){
+            return "fa-solid fa-temperature-half";
+        }
+        if(temperature > 20 && temperature <= 25){
+            return "fa-solid fa-temperature-three-quarters";
+        }
+        if(temperature > 25 && temperature <= 27.5){
+            return "fa-solid fa-temperature-full";
+        }
+        if(temperature > 27.5){
+            return "fa-solid fa-temperature-high";
+        }
+        return "fa-solid fa-temperature-half";
+    }
 
 }
 
