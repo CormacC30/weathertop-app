@@ -2,6 +2,7 @@
   <thead>
   <tr>
     <th>Weather Conditions</th>
+    <th>Code</th>
     <th>Temperature</th>
     <th>Wind Speed</th>
     <th>Pressure (hPa)</th>
@@ -11,8 +12,11 @@
   #{list items:_station.readings, as:'reading'}
   <tr>
     <td>
-      <strong>${reading.getCodeReadingToText()}</strong>  <hr>
-      <p>Weather Code: ${reading.code}</p>
+      <strong>${reading.getCodeReadingToText()}</strong>
+        <p class="icon is-large"><span class="fa-lg"><i class="${reading.getWeatherIcon()}"></i></span></p>
+    </td>
+    <td>
+      <p>${reading.code}</p>
     </td>
     <td>
       ${reading.temperature} &deg;C / ${reading.getFahrenheit()} &deg;F

@@ -8,7 +8,8 @@
             <div class="columns is-variable is-1-mobile is-1-tablet is-2-desktop is-4-widescreen is-3-fullhd">
                 <div class="column">
                     <div class="box has-background-link-dark has-text-centered">
-                        <h3 class="has-text-grey-lighter">${station.name}</h3> <hr>
+                        <h3 class="has-text-grey-lighter">${station.name}</h3>
+                        <span class="icon is-large has-text-light fa-2x"><i class="fa-solid fa-location-dot"></i></span><hr>
                     <div class="has-text-centered has-text-white">
                         <p>Latitude: ${station.getLatitude()} &deg;N</p>
                         <p>Longitude: ${station.getLongitude()} &deg;W</p>
@@ -18,10 +19,11 @@
                 <div class="column">
                     <div class="box has-background-link-dark has-text-centered">
                         <h3 class="has-text-grey-lighter">Current Conditions:</h3>
+                        <span class="icon has-text-light is-large fa-2x">
+                          <i class="${station.getLatestWeatherIcon()}"></i></span>
                         <hr>
                         <div class="has-text-white">
-                            <p>${station.getLatestCodeReadingText()}</p> <br>
-                            <p>Weather Code: ${station.getLatestReading().getCode()} </p>
+                            <p>${station.getLatestCodeReadingText()}</p>
                         </div>
                     </div>
                 </div>

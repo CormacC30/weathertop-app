@@ -20,6 +20,7 @@ public class Reading extends Model
     public int pressure;
     public double windDirection;
 
+    public String weatherIcon = utilities.Conversion.getWeatherIcon(this.getCode());
 
     public Reading(int code, float temperature, float windSpeed, int pressure, double windDirection)
     {
@@ -72,5 +73,9 @@ public class Reading extends Model
 
         double windChill = utilities.Conversion.calculateWindChill(this.temperature, this.windSpeed);
         return formatter.format(windChill); }
+
+    public String getWeatherIcon(){
+        return utilities.Conversion.getWeatherIcon(this.code);
+    }
 
 }

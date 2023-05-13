@@ -1,8 +1,32 @@
 package utilities;
 
 import java.lang.Math;
+import java.util.Map;
+import java.util.TreeMap;
+import java.util.HashMap;
+import java.util.HashSet;
 
 public class Conversion {
+
+    private static HashMap<Integer, String> weatherIcons = new HashMap<>();
+
+    /**
+     * initialize the HashMap in a static block.
+     */
+    static  {
+        weatherIcons.put(100, "fa-solid fa-sun");
+        weatherIcons.put(200, "fa-solid fa-cloud-sun");
+        weatherIcons.put(300, "fa-solid fa-cloud");
+        weatherIcons.put(400, "fa-solid fa-cloud-rain");
+        weatherIcons.put(500, "fa-solid fa-cloud-showers-heavy");
+        weatherIcons.put(600, "fa-solid fa-umbrella");
+        weatherIcons.put(700, "fa-solid fa-snowflake");
+        weatherIcons.put(800, "fa-solid fa-cloud-bolt");
+    }
+
+    public static String getWeatherIcon(int code) {
+        return weatherIcons.get(code);
+    }
 
     //no stored variable = avoid stale data VV
     public static float celciusToFahrenheit(float temperature){
@@ -113,6 +137,8 @@ public class Conversion {
     public static double calculateWindChill(float temperature, float windSpeed) {
         return (13.12 + temperature*0.6215 - 11.37*Math.pow(windSpeed, 0.16) + 0.3965*temperature*Math.pow(windSpeed, 0.16));
     }
+
+
 
 }
 

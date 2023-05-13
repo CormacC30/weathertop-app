@@ -61,5 +61,9 @@ public class Station extends Model
         return formatter.format(this.longitude);
     }
 
+ public String getLatestWeatherIcon() {
+        return getLatestReading().weatherIcon;
+ }
+
 }
 
