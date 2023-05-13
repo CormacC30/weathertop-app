@@ -65,5 +65,34 @@ public class Station extends Model
         return getLatestReading().weatherIcon;
  }
 
+
+ public float getMaxTemperature(){
+        if(readings.size() != 0)
+        {
+            Reading maxReading = readings.get(0);
+            for(Reading reading : readings){
+                if(reading.getTemperature() > maxReading.getTemperature()){
+                    maxReading = reading;
+                }
+
+            }
+            return maxReading.getTemperature();
+        } return 0;
+ }
+
+    public float getMinTemperature(){
+        if(readings.size() != 0)
+        {
+            Reading minReading = readings.get(0);
+            for(Reading reading : readings){
+                if(reading.getTemperature() < minReading.getTemperature()){
+                    minReading = reading;
+                }
+
+            }
+            return minReading.getTemperature();
+        } return 0;
+    }
+
 }
 

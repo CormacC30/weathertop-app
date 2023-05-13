@@ -74,6 +74,11 @@ public class Conversion {
         return 0;
     }
 
+    /**
+     * Returns String which is passed to the view template and thus displays a short description for Wind
+     * @param beaufort
+     * @return
+     */
     public static String beaufortToText(int beaufort){
         switch (beaufort) {
             case 0:
@@ -194,6 +199,8 @@ public class Conversion {
         }
         return "fa-solid fa-temperature-half";
     }
+
+
 
 }
 

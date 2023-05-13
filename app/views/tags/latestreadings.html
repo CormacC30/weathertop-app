@@ -33,6 +33,8 @@
                         <span class="icon has-text-light is-large fa-2x"><i class="${station.getLatestReading().getTemperatureIcon()}"></i></span>
                         <hr>
                         <div class="has-text-white">${station.getLatestReading().getTemperature()} &deg;C / ${station.getLatestReading().getFahrenheit()} &deg;F</div>
+                        <p><span class="has-text-weight-bold">Max: </span>${station.getMaxTemperature()} &deg;C</p>
+                        <p><span class="has-text-weight-bold">Min: </span>${station.getMinTemperature()} &deg;C</p>
                     </div>
                 </div>
                 <div class="column">
