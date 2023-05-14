@@ -1,4 +1,4 @@
-<table class="table">
+<table class="table is-hoverable">
   <thead>
   <tr>
     <th>Weather Conditions</th>
@@ -12,7 +12,7 @@
   #{list items:_station.readings, as:'reading'}
   <tr>
     <td>
-      <strong>${reading.getCodeReadingToText()}</strong>
+      <p class="has-text-weight-bold">${reading.getCodeReadingToText()}</p>
         <p class="icon is-large"><span class="fa-lg"><i class="${reading.getWeatherIcon()}"></i></span></p>
     </td>
     <td>
@@ -32,6 +32,11 @@
     </td>
     <td>
       ${reading.pressure}
+    </td>
+    <td>
+      <a href="/stations/${_station.id}/deleteReading/${reading.id}"><span class="icon has-text-danger">
+  <i class="fas fa-trash fa-lg"></i>
+</span></a>
     </td>
   </tr>
   #{/list}

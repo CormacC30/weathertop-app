@@ -8,7 +8,6 @@ import play.mvc.Controller;
 public class StationCtrl extends Controller
 {
 
-
     public static void index(Long id)
     {
         Station station = Station.findById(id);
@@ -25,5 +24,14 @@ public class StationCtrl extends Controller
         redirect("/stations/" + id);
     }
 
+    public static void deleteReading(Long id, Long readingid) {
+        Station station = Station.findById(id);
+        Reading reading = Reading.findById(readingid);
+        Logger.info("Removing reading" + reading.id);
+        station.readings.remove(reading);
+        station.save();
+        reading.delete();
+        render("station.html", station);
+    }
 }
 

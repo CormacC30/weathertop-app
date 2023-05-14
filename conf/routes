@@ -19,6 +19,9 @@ GET     /stations/{id}                          StationCtrl.index
 POST    /stations/{id}/addreading               StationCtrl.addReading
 POST    /dashboard/addplaylist                  Dashboard.addStation
 
+GET     /stations/{id}/deleteReading/{readingid}    StationCtrl.deleteReading
+GET     /dashboard/deleteStation/{id}           Dashboard.deleteStation
+
 # Ignore favicon requests
 GET     /favicon.ico                            404
 

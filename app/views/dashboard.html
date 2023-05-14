@@ -12,13 +12,17 @@
   </h1>
 
       <a href="/stations/${station.id}" class="icon has-text-primary is-large">
-        <i class="fas fa-folder fa-2x"></i>
+        <i class="fas fa-folder fa-lg"></i>
       </a>
-
+<span class="pl-auto">
+    <a href="/dashboard/deleteStation/${station.id}" class="icon has-text-danger is-large">
+        <i class="fas fa-trash fa-lg"></i>
+    </a>
+</span>
 #{/list}
 #{/if}
 #{else}
-<p>You have no Weather Stations, please enter your weather station details below</p>
+<p class="has-text-weight-bold is-size-5 has-text-centered">You have no Weather Stations listed.<br> Please enter your weather station details below</p>
 #{/else}
 </div>
 #{addstation /}
