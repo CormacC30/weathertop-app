@@ -173,5 +173,38 @@ public class Station extends Model {
         }
         return null;
     }
+
+    public String trendWindSpeed() {
+        if (readings.size() >= 3) {
+            if (latestReading(3).get(0).getWindSpeed() < latestReading(3).get(1).getWindSpeed()
+                    && latestReading(3).get(1).getWindSpeed() < latestReading(3).get(2).getWindSpeed()) {
+                return "fa-solid fa-arrow-up";
+            }
+            if (latestReading(3).get(0).getWindSpeed() > latestReading(3).get(1).getWindSpeed()
+                    && latestReading(3).get(1).getWindSpeed() > latestReading(3).get(2).getWindSpeed()) {
+                return "fa-solid fa-arrow-down";
+            } else return null;
+        } else if (readings.size() < 3) {
+            return null;
+        }
+        return null;
+    }
+
+    public String trendPressure() {
+        if (readings.size() >= 3) {
+            if (latestReading(3).get(0).getPressure() < latestReading(3).get(1).getPressure()
+                    && latestReading(3).get(1).getPressure() < latestReading(3).get(2).getPressure()) {
+                return "fa-solid fa-arrow-up";
+            }
+            if (latestReading(3).get(0).getPressure() > latestReading(3).get(1).getPressure()
+                    && latestReading(3).get(1).getPressure() > latestReading(3).get(2).getPressure()) {
+                return "fa-solid fa-arrow-down";
+            } else return null;
+        } else if (readings.size() < 3) {
+            return null;
+        }
+        return null;
+    }
+
 }
 

@@ -40,7 +40,7 @@
                 <div class="column">
                     <div class="box has-background-link-dark has-text-white has-text-centered">
                         <h3 class="has-text-grey-lighter">Wind</h3>
-                        <span class="icon has-text-light is-large fa-2x"><i class="fa-solid fa-wind"></i></span>
+                        <span class="icon has-text-light is-large fa-2x"><i class="fa-solid fa-wind"></i><i class="${station.trendWindSpeed()}"></i></span>
                         <hr>
                         <div class="has-text-white has-text-left">
                             <p class="has-text-weight-bold has-text-centered">${station.getLatestReading().getWindDescription()}</p>
@@ -57,7 +57,7 @@
                 <div class="column">
                     <div class="box has-background-link-dark has-text-white has-text-centered">
                         <h3 class="has-text-grey-lighter">Pressure</h3>
-                        <span class="icon has-text-light is-large fa-2x"><i class="fa-solid fa-gauge"></i></span>
+                        <span class="icon has-text-light is-large fa-2x"><i class="fa-solid fa-gauge"></i><i class="${station.trendPressure()}"></i></span>
                         <hr>
                         <p class="has-text-white">
                             ${station.getLatestReading().getPressure()} (hPa)
