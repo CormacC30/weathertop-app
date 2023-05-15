@@ -5,6 +5,8 @@ import models.Station;
 import play.Logger;
 import play.mvc.Controller;
 
+import java.time.LocalDateTime;
+
 public class StationCtrl extends Controller
 {
 
@@ -16,8 +18,8 @@ public class StationCtrl extends Controller
 
     }
 
-    public static void addReading(Long id, int code, float temperature, float windSpeed, double windDirection, int pressure) {
-        Reading reading = new Reading(code, temperature, windSpeed, pressure, windDirection);
+    public static void addReading(Long id, int code, float temperature, float windSpeed, double windDirection, int pressure, String timeStamp) {
+        Reading reading = new Reading(code, temperature, windSpeed, pressure, windDirection, timeStamp);
         Station station = Station.findById(id);
         station.readings.add(reading);
         station.save();

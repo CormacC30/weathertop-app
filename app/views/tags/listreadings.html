@@ -1,6 +1,7 @@
 <table class="table is-hoverable">
   <thead>
   <tr>
+    <th>Date/Time</th>
     <th>Weather Conditions</th>
     <th>Code</th>
     <th>Temperature</th>
@@ -12,6 +13,9 @@
   <tbody>
   #{list items:_station.readings, as:'reading'}
   <tr>
+    <td>
+      <p>${reading.timeStamp}</p>
+    </td>
     <td>
       <p class="has-text-weight-bold">${reading.getCodeReadingToText()}</p>
         <p class="icon is-large"><span class="fa-lg"><i class="${reading.getWeatherIcon()}"></i></span></p>

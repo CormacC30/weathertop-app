@@ -146,7 +146,9 @@ public class Station extends Model {
     }
 
     /**
-     * @param readingSize This method creates a subList of the readings ArrayList which is used to create a trend
+     * This method creates a subList of the readings ArrayList which is used to create a trend
+     *
+     * @param readingSize takes in the number of readings in the subList.
      * @return subList of readings defined by readingSize
      */
     public List<Reading> latestReading(int readingSize) {
@@ -157,7 +159,10 @@ public class Station extends Model {
         return latestReadings;
     }
 
-
+    /**
+     * This method is for trending temperature. If three successive readings in the latestReading subList are increasing:
+     * @return a String which is read into the latestreading partial, and dashboard views. Or a null String if successive readings don't increase/decrease relative to each other.
+     */
     public String trendTemperature() {
         if (readings.size() >= 3) {
             if (latestReading(3).get(0).getTemperature() < latestReading(3).get(1).getTemperature()

@@ -8,6 +8,8 @@ import utilities.Conversion;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 
 @Entity
@@ -20,15 +22,24 @@ public class Reading extends Model
     public int pressure;
     public double windDirection;
 
+    public String timeStamp;
+
     public String weatherIcon = utilities.Conversion.getWeatherIcon(this.getCode());
 
-    public Reading(int code, float temperature, float windSpeed, int pressure, double windDirection)
+    public Reading(int code, float temperature, float windSpeed, int pressure, double windDirection, String timeStamp)
     {
         this.code = code;
         this.temperature = temperature;
         this.windSpeed = windSpeed;
         this.pressure = pressure;
         this.windDirection = windDirection;
+
+        LocalDateTime dateTime = LocalDateTime.now();
+
+        DateTimeFormatter myFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+
+        this.timeStamp = dateTime.format(myFormat);
+
     }
     
     public String getCodeReadingToText()
@@ -66,16 +77,13 @@ public class Reading extends Model
 
     public String getWindDirection() {return utilities.Conversion.windDirectionToText(this.windDirection); }
 
-    /**
-     * The getWindCompass() getter is used for passing the value of the wind direction to the html view, in order to rotate the fontawesome icon
-     * @return
-     */
-
-
+    public String getTimeStamp() {
+        return this.timeStamp;
+    }
 
     /**
      * getWindChill() method utilises the imported DecimalFormat class
-     * @return
+     * @return a String representation of the wind chill, to two decimal placs.
      */
     public String getWindChill() {
         NumberFormat formatter = new DecimalFormat("##.##");
