@@ -5,11 +5,15 @@ import play.mvc.Controller;
 
 public class Accounts extends Controller
 {
+    private static boolean loginFailed = false;
+
     public static void signup() {
         render("signup.html");
     }
 
     public static void login() {
+        renderArgs.put("loginFailed", loginFailed); // Pass the loginFailed flag to the view
+        loginFailed = false; // Reset loginFailed flag
         render("login.html");
     }
 
@@ -35,7 +39,8 @@ public class Accounts extends Controller
             redirect("/dashboard");
         } else {
             Logger.info("Authentication failed");
-            redirect("/login");
+            loginFailed = true;
+            login();
         }
     }
 
@@ -43,6 +48,14 @@ public class Accounts extends Controller
         session.clear();
         redirect("/");
     }
+
+    /**
+     *
+     * @return
+     */
+public static boolean loginFailed() {
+    return loginFailed;
+}
 
     public static Member getLoggedInMember()
     {

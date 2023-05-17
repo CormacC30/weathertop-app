@@ -16,6 +16,9 @@
         </div>
         <button class="button is-link is-info">Login</button>
       </form>
+      #{if loginFailed}
+      #{failedauth /}
+      #{/if}
     </div>
     <div class="column is-half">
       <figure class="image is-square">
@@ -23,4 +26,7 @@
       </figure>
     </div>
   </div>
+
 </section>
+<!-- Debug output -->
+

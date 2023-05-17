@@ -32,11 +32,21 @@ public class Reading extends Model
         this.pressure = pressure;
         this.windDirection = windDirection;
 
+        this.date = parseDateTime(date);
+
+    }
+
+    private String parseDateTime(String date){
+        DateTimeFormatter inputFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ssZ");
         DateTimeFormatter myFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
 
+        if (date != null) {
+            LocalDateTime yamlTime = LocalDateTime.parse(date, inputFormat);
+            return yamlTime.format(myFormat);
+        } else {
             LocalDateTime dateTime = LocalDateTime.now();
-            this.date = dateTime.format(myFormat);
-
+           return dateTime.format(myFormat);
+        }
     }
 
     public String getTimeStamp() {
