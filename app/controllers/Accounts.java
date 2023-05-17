@@ -13,6 +13,10 @@ public class Accounts extends Controller
         render("login.html");
     }
 
+    public static void edituser() {
+        render("updateuser.html");
+    }
+
     public static void register(String firstname, String lastname, String email, String password) {
         Logger.info("Registering new user " + email);
         Member member = new Member(firstname, lastname, email, password);
@@ -50,5 +54,17 @@ public class Accounts extends Controller
             login();
         }
         return member;
+    }
+
+    public static void editDetails(String firstname, String lastname, String email, String password){
+
+        Member member = getLoggedInMember();
+        member.firstname = firstname;
+        member.lastname = lastname;
+        member.email = email;
+        member.password = password;
+        member.save();
+        Logger.info("Updating User Account Details");
+        redirect("/dashboard");
     }
 }

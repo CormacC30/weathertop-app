@@ -24,17 +24,28 @@
     </div>
 </div>
     </div>
+
+
     <div class="column is-one-fifth">
     <div class="card has-background-link-dark has-text-centered">
         <div class="card-content">
             <div class="content">
                 <h3 class="has-text-grey-lighter">Current Conditions:</h3>
+
+                #{if station.getLatestReading() != null}
+
                 <span class="icon has-text-light is-large fa-2x">
                           <i class="${station.getLatestWeatherIcon()}"></i></span>
                 <hr>
                 <div class="has-text-white">
                     <p class="has-text-weight-bold">${station.getLatestCodeReadingText()}</p>
                 </div>
+                #{/if}
+                #{else}
+                <hr>
+                <p class="has-text-white">No Readings Available</p>
+                #{/else}
+
             </div>
         </div>
     </div>
@@ -44,11 +55,18 @@
             <div class="card-content">
                 <div class="content">
                     <h3 class="has-text-grey-lighter">Temperature</h3>
+                    #{if station.getLatestReading() != null}
                     <span class="icon has-text-light is-large fa-2x"><i class="${station.getLatestReading().getTemperatureIcon()}"></i><i class="${station.trendTemperature()}"></i></span>
                     <hr>
                     <div class="has-text-white">${station.getLatestReading().getTemperature()} &deg;C / ${station.getLatestReading().getFahrenheit()} &deg;F</div>
                     <p class="has-text-white"><span class="has-text-weight-bold">Max: </span>${station.getMaxTemperature()} &deg;C</p>
                     <p class="has-text-white"><span class="has-text-weight-bold">Min: </span>${station.getMinTemperature()} &deg;C</p>
+
+                    #{/if}
+                    #{else}
+                    <hr>
+                    <p class="has-text-white">No Readings Available</p>
+                    #{/else}
                 </div>
             </div>
         </div>
@@ -57,6 +75,7 @@
         <div class="card has-background-link-dark has-text-centered">
             <div class="card-content">
                 <h3 class="has-text-grey-lighter">Wind</h3>
+                #{if station.getLatestReading() != null}
                 <span class="icon has-text-light is-large fa-2x"><i class="fa-solid fa-wind"></i><i class="${station.trendWindSpeed()}"></i></span>
                 <hr>
                 <div class="has-text-white has-text-left">
@@ -68,6 +87,11 @@
                     <p class="has-text-centered"><span class="has-text-weight-bold">Feels Like:</span> ${station.getLatestReading().getWindChill()} &deg;C</p>
                     <p class="has-text-centered"><span class="has-text-weight-bold">Max: </span>${station.getMaxWindSpeed()} km/h</p>
                     <p class="has-text-centered"><span class="has-text-weight-bold">Min: </span>${station.getMinWindSpeed()} km/h</p>
+                    #{/if}
+                    #{else}
+                    <hr>
+                    <p class="has-text-white">No Readings Available</p>
+                    #{/else}
                 </div>
             </div>
         </div>
@@ -76,6 +100,7 @@
         <div class="card has-background-link-dark has-text-centered">
             <div class="card-content">
                 <h3 class="has-text-grey-lighter">Pressure</h3>
+                #{if station.getLatestReading() != null}
                 <span class="icon has-text-light is-large fa-2x"><i class="fa-solid fa-gauge"></i><i class="${station.trendPressure()}"></i></span>
                 <hr>
                 <p class="has-text-white">
@@ -83,6 +108,11 @@
                 </p>
                 <p class="has-text-white"><span class="has-text-weight-bold">Max: </span>${station.getMaxPressure()} hPa</p>
                 <p class="has-text-white"><span class="has-text-weight-bold">Min: </span>${station.getMinPressure()} hPa</p>
+                #{/if}
+                #{else}
+                <hr>
+                <p class="has-text-white">No Readings Available</p>
+                #{/else}
             </div>
         </div>
     </div>
@@ -90,7 +120,7 @@
       <a href="/stations/${station.id}" class="icon has-text-primary is-large">
         <i class="fas fa-folder fa-lg"></i>
       </a>
-<span class="pl-auto">
+<span>
     <a href="/dashboard/deleteStation/${station.id}" class="icon has-text-danger is-large">
         <i class="fas fa-trash fa-lg"></i>
     </a>
@@ -101,4 +131,5 @@
 <p class="has-text-weight-bold is-size-5 has-text-centered">You have no Weather Stations listed.<br> Please enter your weather station details below</p>
 #{/else}
 </div>
+
 #{addstation /}

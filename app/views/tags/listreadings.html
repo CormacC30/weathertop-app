@@ -5,9 +5,9 @@
     <th>Weather Conditions</th>
     <th>Code</th>
     <th>Temperature</th>
-    <th>Wind Speed</th>
+    <th>Wind</th>
     <th>Pressure (hPa)</th>
-    <th></th>
+    <th>Edit/Delete</th>
   </tr>
   </thead>
   <tbody>
@@ -27,13 +27,11 @@
       ${reading.temperature} &deg;C / ${reading.getFahrenheit()} &deg;F
     </td>
     <td>
-
-      ${reading.windSpeed} (km/h) / ${reading.getBeaufort()} (bft)
+      <span class="has-text-weight-bold">Speed:</span> ${reading.windSpeed} (km/h) / ${reading.getBeaufort()} (bft)
      <br>
-      ${reading.getWindDirection()}
+      <span class="has-text-weight-bold">Direction:</span> ${reading.getWindDirection()}
       <br>
-      Feels Like: ${reading.getWindChill()} &deg;C
-
+      <span class="has-text-weight-bold">Feels Like:</span> ${reading.getWindChill()} &deg;C
     </td>
     <td>
       ${reading.pressure}

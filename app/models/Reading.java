@@ -2,9 +2,7 @@ package models;
 
 import javax.persistence.Entity;
 
-import play.Logger;
 import play.db.jpa.Model;
-import utilities.Conversion;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
@@ -22,11 +20,11 @@ public class Reading extends Model
     public int pressure;
     public double windDirection;
 
-    public String timeStamp;
+    public String date;
 
     public String weatherIcon = utilities.Conversion.getWeatherIcon(this.getCode());
 
-    public Reading(int code, float temperature, float windSpeed, int pressure, double windDirection, String timeStamp)
+    public Reading(int code, float temperature, float windSpeed, int pressure, double windDirection, String date)
     {
         this.code = code;
         this.temperature = temperature;
@@ -34,14 +32,18 @@ public class Reading extends Model
         this.pressure = pressure;
         this.windDirection = windDirection;
 
-        LocalDateTime dateTime = LocalDateTime.now();
-
         DateTimeFormatter myFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
 
-        this.timeStamp = dateTime.format(myFormat);
+            LocalDateTime dateTime = LocalDateTime.now();
+            this.date = dateTime.format(myFormat);
 
     }
-    
+
+    public String getTimeStamp() {
+            return this.date;
+    }
+
+
     public String getCodeReadingToText()
     {
         return utilities.Conversion.codeReadingToText(this.code);
@@ -77,10 +79,6 @@ public class Reading extends Model
 
     public String getWindDirection() {return utilities.Conversion.windDirectionToText(this.windDirection); }
 
-    public String getTimeStamp() {
-        return this.timeStamp;
-    }
-
     /**
      * getWindChill() method utilises the imported DecimalFormat class
      * @return a String representation of the wind chill, to two decimal placs.
@@ -99,5 +97,7 @@ public class Reading extends Model
     public String getTemperatureIcon(){
         return utilities.Conversion.celciusToIcon(this.temperature);
     }
+
+
 
 }

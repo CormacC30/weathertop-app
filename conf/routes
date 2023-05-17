@@ -10,6 +10,7 @@ GET    /login                                   Accounts.login
 POST   /register                                Accounts.register
 POST   /authenticate                            Accounts.authenticate
 GET    /logout                                  Accounts.logout
+GET    /updateuser                              Accounts.edituser
 
 GET     /dashboard                              Dashboard.index
 GET     /about                                  About.index
