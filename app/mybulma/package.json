@@ -1,0 +1,21 @@
+{
+  "name": "mybulma",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bulma": "^0.9.4",
+    "node-sass": "^8.0.0"
+  },
+
+  "scripts": {
+    "css-build": "node-sass C:/dev/web-development/assignment-2/weathertop-v3.1/app/custom/mystyles.scss css/mystyles.css",
+    "css-watch": "npm run css-build -- --watch",
+    "start": "npm run css-watch"
+  }
+}
