@@ -33,15 +33,12 @@ public class Reading extends Model
         this.windSpeed = windSpeed;
         this.pressure = pressure;
         this.windDirection = windDirection;
-        
         this.date = Conversion.parseDateTime(date);
-
     }
 
     public String getTimeStamp() {
             return this.date;
     }
-
 
     public String getCodeReadingToText()
     {
@@ -80,7 +77,7 @@ public class Reading extends Model
 
     /**
      * getWindChill() method utilises the imported DecimalFormat class
-     * @return a String representation of the wind chill, to two decimal placs.
+     * @return a String representation of the wind chill, to two decimal places.
      */
     public String getWindChill() {
         NumberFormat formatter = new DecimalFormat("##.##");
@@ -96,7 +93,5 @@ public class Reading extends Model
     public String getTemperatureIcon(){
         return utilities.Conversion.celciusToIcon(this.temperature);
     }
-
-
 
 }

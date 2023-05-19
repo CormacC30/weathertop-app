@@ -25,7 +25,7 @@ GET     /stations/{id}/deleteReading/{readingid}    StationCtrl.deleteReading
 GET     /dashboard/deleteStation/{id}           Dashboard.deleteStation
 
 # Ignore favicon requests
-GET     /favicon.ico                            404
+GET     /favicon.png                           StaticDir:public/images/favicon.png
 
 # Map static resources from the /app/public folder to the /public path
 GET     /public/                                staticDir:public

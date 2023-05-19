@@ -19,6 +19,7 @@ public class Conversion {
      * Tried using a constructor for this purpose, (as in Programming labs) but I would get a PersistenceException message, so I came upon static blocks
      */
     static  {
+        weatherIcons.put(0, "fa-solid fa-sun");
         weatherIcons.put(100, "fa-solid fa-sun");
         weatherIcons.put(200, "fa-solid fa-cloud-sun");
         weatherIcons.put(300, "fa-solid fa-cloud");
@@ -39,6 +40,7 @@ public class Conversion {
     }
 
     public static int kmhToBeaufort(float windSpeed){
+
         if(windSpeed >= 0.0 && windSpeed < 1.0) {
             return 0;
         }
@@ -86,31 +88,31 @@ public class Conversion {
     public static String beaufortToText(int beaufort){
         switch (beaufort) {
             case 0:
-                return "calm";
+                return "Calm ";
             case 1:
-                return "Light air";
+                return "Light air ";
             case 2:
-                return "Light breeze";
+                return "Light breeze ";
             case 3:
-                return "Gentle breeze";
+                return "Gentle breeze ";
             case 4:
-                return "Moderate breeze";
+                return "Moderate breeze ";
             case 5:
-                return "Fresh breeze";
+                return "Fresh breeze ";
             case 6:
-                return "Strong breeze";
+                return "Strong breeze ";
             case 7:
-                return "Near gale";
+                return "Near gale ";
             case 8:
-                return "Gale";
+                return "Gale ";
             case 9:
-                return "Strong gale";
+                return "Strong gale ";
             case 10:
-                return "Storm";
+                return "Storm ";
             case 11:
-                return "Violent Storm";
+                return "Violent Storm ";
             default:
-                return "Calm";
+                return "Calm ";
         }
     }
 
