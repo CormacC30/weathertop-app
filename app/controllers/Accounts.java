@@ -5,22 +5,42 @@ import play.mvc.Controller;
 
 public class Accounts extends Controller
 {
+    //boolean variable for if login is unsuccessful - used in triggering if statement in the view which renders a "failedauth" partial.
     private static boolean loginFailed = false;
 
+    /**
+     * signup() renders the signup.html view
+     */
     public static void signup() {
         render("signup.html");
     }
 
+    /**
+     * login() renders the login.html view
+     */
     public static void login() {
         renderArgs.put("loginFailed", loginFailed); // Pass the loginFailed flag to the view
         loginFailed = false; // Reset loginFailed flag
         render("login.html");
     }
 
+    /**
+     * updateuser() renders the updateuser.html
+     */
     public static void updateUser() {
         render("updateuser.html");
     }
 
+    /**
+     * register new user, creates new member object,
+     * called by registering the signup form in signup.html
+     * user inputs new firstname, lastname etc.
+     *
+     * @param firstname User's first name
+     * @param lastname User's last name
+     * @param email User's email
+     * @param password User's password
+     */
     public static void register(String firstname, String lastname, String email, String password) {
         Logger.info("Registering new user " + email);
         Member member = new Member(firstname, lastname, email, password);
@@ -28,6 +48,12 @@ public class Accounts extends Controller
         redirect("/login");
     }
 
+    /**
+     * takes in the email and password on the login page.
+     * If password and email match a member account it to start a session for that member
+     * @param email
+     * @param password
+     */
     public static void authenticate(String email, String password) {
         Logger.info("Attempting to authenticate with " + email + ":" + password);
 
@@ -44,18 +70,18 @@ public class Accounts extends Controller
         }
     }
 
+    /**
+     * logout() clears the session and redirects to the start page.
+     */
     public static void logout() {
         session.clear();
         redirect("/");
     }
 
     /**
-     *
+     * getLoggedInMember returns the member object for current session.
      * @return
      */
-public static boolean loginFailed() {
-    return loginFailed;
-}
 
     public static Member getLoggedInMember()
     {
@@ -69,6 +95,14 @@ public static boolean loginFailed() {
         return member;
     }
 
+    /**
+     * UpdateAccount() Used to update a user's credentials. takes in four parameters and saves it
+     * to loggedInMember in current session.
+     * @param firstname
+     * @param lastname
+     * @param email
+     * @param password
+     */
     public static void updateAccount(String firstname, String lastname, String email, String password){
 
         Member member = getLoggedInMember();

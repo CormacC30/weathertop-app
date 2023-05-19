@@ -12,11 +12,18 @@ import java.time.format.DateTimeFormatter;
 
 public class Conversion {
 
+    /**
+     * HashMap for the converting weather codes to icons. Key value pair composed of weather code (key) and weather icon
+     * string (font awesome)
+     *
+     * and the corresponding font awesome icon can be retrieved.
+     */
     private static HashMap<Integer, String> weatherIcons = new HashMap<>();
 
     /**
-     * initialises the weatherIcons HashMap in a static block.
-     * Tried using a constructor for this purpose, (as in Programming labs) but I would get a PersistenceException message, so I came upon static blocks
+     * initialises the weatherIcons HashMap, key value pairs in a static block.
+     *
+     *
      */
     static  {
         weatherIcons.put(0, "fa-solid fa-sun");
@@ -34,11 +41,23 @@ public class Conversion {
         return weatherIcons.get(code);
     }
 
-    //no stored variable = avoid stale data VV
+    /**
+     * celciusToFahrenheit takes in the temperature in degC performs calculation
+     * converts it to F
+     *
+     * @param temperature
+     * @return Faherenheit value.
+     */
     public static float celciusToFahrenheit(float temperature){
         return((temperature * 9/5) + 32);
     }
 
+    /**
+     * kmhToBeaufort method takes in windspeed
+     * @param windSpeed
+     * checks if the windspeed value falls within a certain range on Beaufort Scale
+     * @return Beaufort wind speed value
+     */
     public static int kmhToBeaufort(float windSpeed){
 
         if(windSpeed >= 0.0 && windSpeed < 1.0) {
@@ -83,39 +102,45 @@ public class Conversion {
     /**
      * Returns String which is passed to the view template and thus displays a short description for Wind
      * @param beaufort
-     * @return
+     * @return string which gives descriptor for wind
      */
     public static String beaufortToText(int beaufort){
         switch (beaufort) {
             case 0:
-                return "Calm ";
+                return "Calm";
             case 1:
-                return "Light air ";
+                return "Light air";
             case 2:
-                return "Light breeze ";
+                return "Light breeze";
             case 3:
-                return "Gentle breeze ";
+                return "Gentle breeze";
             case 4:
-                return "Moderate breeze ";
+                return "Moderate breeze";
             case 5:
-                return "Fresh breeze ";
+                return "Fresh breeze";
             case 6:
-                return "Strong breeze ";
+                return "Strong breeze";
             case 7:
-                return "Near gale ";
+                return "Near gale";
             case 8:
-                return "Gale ";
+                return "Gale";
             case 9:
-                return "Strong gale ";
+                return "Strong gale";
             case 10:
-                return "Storm ";
+                return "Storm";
             case 11:
-                return "Violent Storm ";
+                return "Violent Storm";
             default:
-                return "Calm ";
+                return "Calm";
         }
     }
 
+    /**
+     * codeReadingToText() takes in the weather code
+     * @param code
+     * Switch statement returns a corresponding String weather descriptor.
+     * @return
+     */
     public static String codeReadingToText(int code) {
         switch (code) {
             case 100:
@@ -139,6 +164,12 @@ public class Conversion {
         }
     }
 
+    /**
+     * takes in
+     * @param windDirection
+     * checks if it falls within a range, corresponding with compass direction
+     * @returns the wind direction String which is passed on to the views, either listreadings.html or latestreadings.html
+     */
     public static String windDirectionToText(double windDirection) {
         if (windDirection >= 348.75 || windDirection < 11.25) {
             return "North";
@@ -177,10 +208,25 @@ public class Conversion {
         }
     }
 
+    /**
+     * calculateWindChill() takes in two parameters
+     * @param temperature
+     * @param windSpeed
+     * Performs wind chill calculation and
+     * @returns the wind chill value (double).
+     */
     public static double calculateWindChill(float temperature, float windSpeed) {
         return (13.12 + temperature*0.6215 - 11.37*Math.pow(windSpeed, 0.16) + 0.3965*temperature*Math.pow(windSpeed, 0.16));
     }
 
+    /**
+     * Takes in the temp in Celcius and converts it to a different temperature icon
+     * @param temperature
+     * The method uses if statements to test if the celcius temperature falls within a temperature range
+     * Then
+     * @return a String which is passed to latestreadings.html
+     * This in turn generates a different  icon for each temperature.
+     */
     public static String celciusToIcon(float temperature) {
         if(temperature <= 5){
             return "fa-solid fa-temperature-empty";
@@ -206,6 +252,13 @@ public class Conversion {
         return "fa-solid fa-temperature-half";
     }
 
+    /**
+     * parseDateTime() takes in the LocalDateTime object (date)
+     * @param date
+     * this comes either from the localDateTime.now() method (for new readings) or from data.yml.
+     * Uses a DateTimeFormatter to format the date correctly
+     * @return the string representation of the date and time.
+     */
     public static String parseDateTime(LocalDateTime date){
         DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"); //Create DateTimeFormatter
 
