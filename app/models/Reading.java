@@ -2,7 +2,9 @@ package models;
 
 import javax.persistence.Entity;
 
+import play.Logger;
 import play.db.jpa.Model;
+import utilities.Conversion;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
@@ -24,29 +26,16 @@ public class Reading extends Model
 
     public String weatherIcon = utilities.Conversion.getWeatherIcon(this.getCode());
 
-    public Reading(int code, float temperature, float windSpeed, int pressure, double windDirection, String date)
+    public Reading(int code, float temperature, float windSpeed, int pressure, double windDirection, LocalDateTime date)
     {
         this.code = code;
         this.temperature = temperature;
         this.windSpeed = windSpeed;
         this.pressure = pressure;
         this.windDirection = windDirection;
+        
+        this.date = Conversion.parseDateTime(date);
 
-        this.date = parseDateTime(date);
-
-    }
-
-    private String parseDateTime(String date){
-        DateTimeFormatter inputFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ssZ");
-        DateTimeFormatter myFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
-
-        if (date != null) {
-            LocalDateTime yamlTime = LocalDateTime.parse(date, inputFormat);
-            return yamlTime.format(myFormat);
-        } else {
-            LocalDateTime dateTime = LocalDateTime.now();
-           return dateTime.format(myFormat);
-        }
     }
 
     public String getTimeStamp() {

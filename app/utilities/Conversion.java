@@ -1,17 +1,21 @@
 package utilities;
 
 import java.lang.Math;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Conversion {
 
     private static HashMap<Integer, String> weatherIcons = new HashMap<>();
 
     /**
-     * initialize the HashMap in a static block.
+     * initialises the weatherIcons HashMap in a static block.
      * Tried using a constructor for this purpose, (as in Programming labs) but I would get a PersistenceException message, so I came upon static blocks
      */
     static  {
@@ -200,7 +204,15 @@ public class Conversion {
         return "fa-solid fa-temperature-half";
     }
 
+    public static String parseDateTime(LocalDateTime date){
+        DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"); //Create DateTimeFormatter
 
+        if (date != null) {
+            return FORMATTER.format(date); //uses your formatter to format the date/time from Yaml file
+        } else {
+            return FORMATTER.format(LocalDateTime.now()); //Get Current Date Time & Set formatted String
+        }
+    }
 
 }
 

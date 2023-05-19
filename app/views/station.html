@@ -4,29 +4,25 @@
 #{menu id:"dashboard"/}
 
 <div class="content box has-background-link-light">
-  <div class="columns">
-    <div class="column is-one-fifth">
-      <span class="has-text-centered">
-    <h1 class="title is-size-2">
+
+
+
+    <h1 class="title has-text-link is-size-2">
     ${station.name}
+        <span class="icon is-large has-text-link fa-lg"><i class="fa-solid fa-location-dot"></i></span>
   </h1>
 
-      <h4>
+      <h4 class="has-text-link">
         ${station.getLatitude()} &deg;N
-      </h4>
-      <h4>
+
         ${station.getLongitude()} &deg;W
       </h4>
-</span>
 
-    </div>
-    <div class="column">
-      <img src="/public/images/compass2.png" class="image is-128x128">
-    </div>
-    <div class="column">
 
-    </div>
-  </div>
+
+
+
+
   #{if station.readings.size() > 0}
   #{latestreadings station:station /}
   <div class="box is-info has-background-primary-light">

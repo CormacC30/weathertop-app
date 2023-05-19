@@ -7,14 +7,14 @@
     <th>Temperature</th>
     <th>Wind</th>
     <th>Pressure (hPa)</th>
-    <th>Edit/Delete</th>
+    <th>Delete</th>
   </tr>
   </thead>
   <tbody>
   #{list items:_station.readings, as:'reading'}
   <tr>
     <td>
-      <p>${reading.timeStamp}</p>
+      <p>${reading.getTimeStamp()}</p>
     </td>
     <td>
       <p class="has-text-weight-bold">${reading.getCodeReadingToText()}</p>
