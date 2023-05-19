@@ -9,14 +9,14 @@
     #{list items:stations, as:'station'}
 
     <div class="box">
-        <p class="title is-size-3 has-text-link">
+        <p class="title is-size-4 has-text-link">
             <a href="/stations/${station.id}">${station.name}</a>
 
             <a href="/stations/${station.id}">
             <span class="icon is-large has-text-link fa-lg"><i class="fa-solid fa-location-dot"></i></span>
             </a>
-            <span class="is-size-4">${station.getLatitude()} &deg;N ${station.getLongitude()} &deg;W</span>
-
+            <span class="is-size-5">${station.getLatitude()} &deg;N ${station.getLongitude()} &deg;W</span>
+        </p>
         <div class="has-text-right">
             <a href="/stations/${station.id}" class="icon has-text-primary is-large">
                 <i class="fas fa-folder fa-lg"></i>
@@ -27,7 +27,7 @@
             </a>
         </div>
 
-        </p>
+
 
         #{if station.getLatestReading() != null}
 
