@@ -6,21 +6,16 @@
 <div class="content box has-background-link-light">
 
 
-
-    <h1 class="title has-text-link is-size-2">
+  <h1 class="title has-text-link is-size-2">
     ${station.name}
-        <span class="icon is-large has-text-link fa-lg"><i class="fa-solid fa-location-dot"></i></span>
+    <span class="icon is-large has-text-link fa-lg"><i class="fa-solid fa-location-dot"></i></span>
   </h1>
 
-      <h4 class="has-text-link">
-        ${station.getLatitude()} &deg;N
+  <h4 class="has-text-link">
+    ${station.getLatitude()} &deg;N
 
-        ${station.getLongitude()} &deg;W
-      </h4>
-
-
-
-
+    ${station.getLongitude()} &deg;W
+  </h4>
 
 
   #{if station.readings.size() > 0}
@@ -36,11 +31,11 @@
   #{/if}
   #{else}
   <div>
-  <span class="box is-large is-size-5 has-text-weight-bold has-text-success-dark has-text-centered m-0">No readings have been recorded for ${station.name} <br> Please submit your first reading below</span>
+    <span class="box is-large is-size-5 has-text-weight-bold has-text-success-dark has-text-centered m-0">No readings have been recorded for ${station.name} <br> Please submit your first reading below</span>
   </div>
   #{/else}
   <div class="box has-background-grey-light">
-  #{addreading station:station /}
+    #{addreading station:station /}
   </div>
 </div>
 

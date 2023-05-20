@@ -1,93 +1,99 @@
 <div class="container has-background-link-light">
-    <div class="tile-is-ancestor">
-        <h3 class="card-header-title is-centered is-size-3">
-            Latest Weather
-        </h3>
-        <section>
-            #{list items:_station, as:'station'}
+  <div class="tile-is-ancestor">
+    <h3 class="card-header-title is-centered is-size-3">
+      Latest Weather
+    </h3>
+    <section>
+      #{list items:_station, as:'station'}
 
 
+      <div class="columns">
 
-            <div class="columns">
-
-                <div class="column is-one-fifth">
-                    <div class="card has-background-link-dark has-text-centered" style="height: 100%;">
-                        <div class="card-content">
-                            <div class="content">
-                                <h3 class="has-text-grey-lighter">Current Conditions:</h3>
-                                <span class="icon has-text-light is-large fa-2x">
+        <div class="column is-one-fifth">
+          <div class="card has-background-link-dark has-text-centered" style="height: 100%;">
+            <div class="card-content">
+              <div class="content">
+                <h3 class="has-text-grey-lighter">Current Conditions:</h3>
+                <span class="icon has-text-light is-large fa-2x">
                           <i class="${station.getLatestWeatherIcon()}"></i></span>
-                                <hr>
-                                <div class="has-text-white">
-                                    <p class="has-text-weight-bold">${station.getLatestCodeReadingText()}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <hr>
+                <div class="has-text-white">
+                  <p class="has-text-weight-bold">${station.getLatestCodeReadingText()}</p>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-                <div class="column is-one-fifth">
-                    <div class="card has-background-link-dark has-text-centered" style="height: 100%;">
-                        <div class="card-content">
-                            <div class="content">
-                                <h3 class="has-text-grey-lighter">Temperature</h3>
-                                <span class="icon has-text-light is-large fa-2x"><i class="${station.getLatestReading().getTemperatureIcon()}"></i><i class="${station.trendTemperature()}"></i></span>
-                                <hr>
-                                <p class="has-text-white">${station.getLatestReading().getTemperature()} &deg;C / ${station.getLatestReading().getFahrenheit()} &deg;F<br>
-                                    <span class="has-text-weight-bold">Max: </span>${station.getMaxTemperature()} &deg;C<br>
-                                    <span class="has-text-weight-bold">Min: </span>${station.getMinTemperature()} &deg;C</p>
-                            </div>
-                        </div>
-                    </div>
+        <div class="column is-one-fifth">
+          <div class="card has-background-link-dark has-text-centered" style="height: 100%;">
+            <div class="card-content">
+              <div class="content">
+                <h3 class="has-text-grey-lighter">Temperature</h3>
+                <span class="icon has-text-light is-large fa-2x"><i
+                    class="${station.getLatestReading().getTemperatureIcon()}"></i><i
+                    class="${station.trendTemperature()}"></i></span>
+                <hr>
+                <p class="has-text-white">${station.getLatestReading().getTemperature()} &deg;C /
+                  ${station.getLatestReading().getFahrenheit()} &deg;F<br>
+                  <span class="has-text-weight-bold">Max: </span>${station.getMaxTemperature()} &deg;C<br>
+                  <span class="has-text-weight-bold">Min: </span>${station.getMinTemperature()} &deg;C</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column is-one-third">
+          <div class="card has-background-link-dark has-text-centered" style="height: 100%;">
+            <div class="card-content">
+              <h3 class="has-text-grey-lighter">Wind</h3>
+              <span class="icon has-text-light is-large fa-2x"><i class="fa-solid fa-wind"></i></span>
+              <span class="has-text-weight-bold has-text-white is-size-5">${station.getLatestReading().getWindDescription()}</span>
+              <span class="icon has-text-light is-large fa-2x"><i class="${station.trendWindSpeed()}"></i></span>
+              <hr>
+              <div class="has-text-white has-text-left">
+                <div class="columns">
+                  <div class="column is-one-half">
+                    <p>
+                      <span class="has-text-weight-bold">Speed:</span><br> ${station.getLatestReading().getWindSpeed()}
+                      (km/h) / ${station.getLatestReading().getBeaufort()} (bft)<br>
+                      <span class="has-text-weight-bold">Direction:</span><br>
+                      ${station.getLatestReading().getWindDirection()}<br>
+                    </p>
+                  </div>
+                  <div class="column is-align-self-auto">
+                    <p>
+                      <span class="has-text-weight-bold">Feels Like:</span> ${station.getLatestReading().getWindChill()}
+                      &deg;C<br>
+                      <span class="has-text-weight-bold">Max: </span>${station.getMaxWindSpeed()} km/h<br>
+                      <span class="has-text-weight-bold">Min: </span>${station.getMinWindSpeed()} km/h</p>
+                  </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-                <div class="column is-one-third">
-                    <div class="card has-background-link-dark has-text-centered" style="height: 100%;">
-                        <div class="card-content">
-                            <h3 class="has-text-grey-lighter">Wind</h3>
-                            <span class="icon has-text-light is-large fa-2x"><i class="fa-solid fa-wind"></i></span>
-                            <span class="has-text-weight-bold has-text-white is-size-5">${station.getLatestReading().getWindDescription()}</span>
-                            <span class="icon has-text-light is-large fa-2x"><i class="${station.trendWindSpeed()}"></i></span>
-                            <hr>
-                            <div class="has-text-white has-text-left">
-                                <div class="columns">
-                                    <div class="column is-one-half">
-                                        <p>
-                                            <span class="has-text-weight-bold">Speed:</span><br> ${station.getLatestReading().getWindSpeed()} (km/h) / ${station.getLatestReading().getBeaufort()} (bft)<br>
-                                            <span class="has-text-weight-bold">Direction:</span><br> ${station.getLatestReading().getWindDirection()}<br>
-                                        </p>
-                                    </div>
-                                    <div class="column is-align-self-auto">
-                                        <p>
-                                            <span class="has-text-weight-bold">Feels Like:</span> ${station.getLatestReading().getWindChill()} &deg;C<br>
-                                            <span class="has-text-weight-bold">Max: </span>${station.getMaxWindSpeed()} km/h<br>
-                                            <span class="has-text-weight-bold">Min: </span>${station.getMinWindSpeed()} km/h</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div class="column is-align-self-auto">
+          <div class="card has-background-link-dark has-text-centered" style="height: 100%;">
+            <div class="card-content">
+              <div class="has-text-white">
+                <h3 class="has-text-grey-lighter">Pressure</h3>
+                <span class="icon has-text-light is-large fa-2x"><i class="fa-solid fa-gauge"></i><i
+                    class="${station.trendPressure()}"></i></span>
+                <hr>
+                <p>
+                  ${station.getLatestReading().getPressure()} (hPa)
+                </p>
+                <p><span class="has-text-weight-bold">Max: </span>${station.getMaxPressure()} hPa</p>
+                <p><span class="has-text-weight-bold">Min: </span>${station.getMinPressure()} hPa</p>
+              </div>
+            </div>
+          </div>
+        </div>
 
-                <div class="column is-align-self-auto">
-                    <div class="card has-background-link-dark has-text-centered" style="height: 100%;">
-                        <div class="card-content">
-                            <div class="has-text-white">
-                                <h3 class="has-text-grey-lighter">Pressure</h3>
-                                <span class="icon has-text-light is-large fa-2x"><i class="fa-solid fa-gauge"></i><i class="${station.trendPressure()}"></i></span>
-                                <hr>
-                                <p>
-                                    ${station.getLatestReading().getPressure()} (hPa)
-                                </p>
-                                <p><span class="has-text-weight-bold">Max: </span>${station.getMaxPressure()} hPa</p>
-                                <p><span class="has-text-weight-bold">Min: </span>${station.getMinPressure()} hPa</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-    </div>
-            #{/list}
-        </section>
-    </div>
+      </div>
+      #{/list}
+    </section>
+  </div>
 </div>
